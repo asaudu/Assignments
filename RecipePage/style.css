@@ -1,0 +1,13 @@
+body {
+    background-color: #F8E6AB;  
+  }
+
+  .left {
+     width: 600px;
+     display: inline-block;
+  }
+
+  .right {
+    width: 600px;
+    display: inline-block;
+  }
