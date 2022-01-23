@@ -1,13 +1,30 @@
+h1 {
+    font-family: 'Neonderthaw', cursive;
+    font-size: 60px
+}
+
 body {
     background-color: #F8E6AB;  
+    background-image: url("https://us.123rf.com/450wm/graycet/graycet1905/graycet190501788/122017796-silhouette-of-a-head-of-a-sweet-lady-a-bright-shawl-a-turban-is-tied-on-the-head-of-an-african-ameri.jpg?ver=6")
+    
   }
 
   .left {
      width: 600px;
-     display: inline-block;
+     float: left;
+     margin-left: 30px;
   }
 
   .right {
     width: 600px;
-    display: inline-block;
+    float: right;
+    margin-left: 30px;
+    margin-right: 180px;
+  }
+
+
+  h3 {
+    font-family: 'Neonderthaw', cursive;
+    font-size: 50px
+    font-color: #FFC300;
   }
