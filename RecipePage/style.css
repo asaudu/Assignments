@@ -1,11 +1,23 @@
+/* * {
+  color: #420A7D ;
+}*/
+
 h1 {
     font-family: 'Neonderthaw', cursive;
     font-size: 60px
+    
+}
+
+title {
+  text-align: center;
 }
 
 body {
-    background-color: #F8E6AB;  
-  }
+  background-color:rgb(230, 230, 250);
+  background-image:url(https://c.tenor.com/jczczEuaQYkAAAAi/yes.gif);
+  background-position:top left;
+  background-repeat:repeat;
+  background-attachment:fixed;}
 
   .left {
      width: 600px;
@@ -17,12 +29,35 @@ body {
     width: 600px;
     float: right;
     margin-left: 30px;
-    margin-right: 180px;
+    margin-right: 150px;
   }
 
 
   h3 {
     font-family: 'Neonderthaw', cursive;
     font-size: 50px
-    font-color: #FFC300;
+    font-color: #EA9807;
   }
+
+  button {
+    color: #7936C0;
+  }
+
+  img {
+    width: 32%;
+  }
+
+  @media(min-width: 1081px) {
+    img{
+      width: 100%;
+    }
+  }
+
+  @media (min-width: 400px) {
+    body {
+      background-color: #DAF7A6;
+      color: #EA9807 
+    }
+  }
+
+  
