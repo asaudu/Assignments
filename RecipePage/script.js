@@ -12,4 +12,4 @@ colorChange.style.color = "#A265E2";
     return false;*/
 
     let buttonChange = document.querySelector('#button-id');
-    buttonChange.addEventListener('click', () => buttonChange.style.backgroundColor = 'blue');
+    buttonChange.addEventListener('click', () => buttonChange.style.backgroundColor = 'lightblue');
