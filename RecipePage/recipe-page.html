@@ -5,6 +5,7 @@
     <meta charset ="utf-8">
     <link rel="stylesheet" href="style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Neonderthaw&display=swap" rel="stylesheet">
+    <link name="viewport" content="width=device-width, initial-scale=1.0">
 </head> 
   <body>
     
@@ -49,9 +50,22 @@
         <li>Can be enjoyed once it has cooled to your liking!</li>
       </ol>
       <h3>Other Recipes to Try</h3>
-      <a href="https://cheflolaskitchen.com/akara-acaraje/">Chef Lolas Kitchen</a> <br>
+      <a href="https://cheflolaskitchen.com/akara-acaraje/" target="_blank" rel="noopener noreferrer"> <button>Chef Lola's Kitchen</button></a> <br>
       <br>
-      <a href="https://www.curiouscuisiniere.com/akara-bean-fritters/">Curious Cuisienere</a>
+      <a href="https://www.curiouscuisiniere.com/akara-bean-fritters/" target="_blank" rel="noopener noreferrer"><button>Curious Cuisienere</button></a> <br> <br>
+      <div id="container">
+        <label for="commentBox">Want your recipe featured? Comment it below!</label> <br>
+        <textarea id="commentBox" name="commentBox"
+            rows="5" cols="33">
+  Drop your recipe here...
+  </textarea> <br>
+  <input type="submit" onclick="myAlertBox()"/>
+      </div>
+      
     </div>
+    
+    <script src="script.js">
+
+    </script>
   </body> 
 </html>
