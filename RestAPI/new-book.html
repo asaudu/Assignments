@@ -1,0 +1,48 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="container">
+        <hr>
+        <h1>Create New Book</h1>
+        <hr>
+
+        <form action="http://localhost:3000/book" method="POST">
+            <div class="form-group">
+                <label for="ISBN">ISBN</label>
+                <input class="form-control" name="isbn">
+            </div>
+
+            <div class="form-group">
+                <label for="Title">Title</label>
+                <input class="form-control" name="title">
+            </div>
+
+            <div class="form-group">
+                <label for="Author">Author</label>
+                <input class="form-control" name="Author">
+            </div>
+
+             <div class="form-group">
+                <label for="Publisher">Publisher</label>
+                <input class="form-control" name="Publisher">
+            </div>
+
+            <div class="form-group">
+                <label for="NumberOfPages">Number of Pages</label>
+                <input class="form-control" name="NumberOfPages">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+</body>
+<script scr="book-api.js"></script>
+<script scr="book-list.js"></script>
+</html>
