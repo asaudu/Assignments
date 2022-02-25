@@ -20,7 +20,7 @@ const Game = () => {
             </div>
 
             <div id="gameSection">
-            <Form />
+            <Form max={10}/>
             
             
             </div>
