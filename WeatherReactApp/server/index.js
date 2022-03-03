@@ -16,9 +16,9 @@ app.get("/getWeatherPlano", (req, res) => {
         "https://api.openweathermap.org/data/2.5/forecast?lat=33.0136764&lon=-96.6925096&cnt=5&units=imperial&appid=02cfcf682f2bd37a2b563392cc9c6d48",
         function(error, response, body) {
         if(!error && response.statusCode === 200) {
-            let parsedBody = JSON.parse(body);
-            let temperature = parsedBody['list']['main']['temp'];
-            res.send({temperature, });
+            // let parsedBody = JSON.parse(body);
+            // let temperature = parsedBody['list']['main']['temp'];
+            res.send(body);
          }
        }
     );
