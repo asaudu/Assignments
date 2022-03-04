@@ -5,13 +5,8 @@ import './App.css';
 
 function App() {
 
-  const [data, setData] = React.useState(null);
+  const [data, setData] = useState(null);
 
-  // useEffect(() => {
-  //   fetch("/api")
-  //     .then((res) => res.json())
-  //     .then((data) => setData(data.message));
-  // }, []);
 
   useEffect(() => {
     console.log(useEffect );
@@ -21,6 +16,7 @@ function App() {
       .then((data) => setData(data));
       //empty array below to make sure it only renders on the first render of component
   }, []);
+
 console.log(data)
   return (
     <div className="App">
