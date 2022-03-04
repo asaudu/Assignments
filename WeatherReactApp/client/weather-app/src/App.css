@@ -14,6 +14,9 @@
 }
 
 .App-header {
+  background-image: url("https://i.pinimg.com/736x/b1/db/23/b1db235ad21fb6b8f2cfc8811d0d7f56.jpg");
+  /* background-repeat: no-repeat, repeat; */
+  background-size: cover;
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -36,3 +39,5 @@
     transform: rotate(360deg);
   }
 }
+/* adding in the weather card styling */
+

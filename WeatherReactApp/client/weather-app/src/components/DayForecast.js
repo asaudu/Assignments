@@ -11,13 +11,12 @@ const DayForecast = ({forecast}) => {
             {forecast.weather.map((w) => {
                 return <img src={`http://openweathermap.org/img/wn/${w.icon}@2x.png`} />
             })}
-            <h2>Current Temp: {forecast.main.temp}</h2>
-            <h2>Temp Low: {forecast.main.temp_min}</h2>
-            <h2>Temp High: {forecast.main.temp_max}</h2>
-            <h2>Humidity: {forecast.main.humidity}</h2>
-            <h2>Wind Speed: {forecast.wind.speed}</h2>
+            <h6>Current Temp: {forecast.main.temp}</h6>
+            <h6>Temp Low: {forecast.main.temp_min}</h6>
+            <h6>Temp High: {forecast.main.temp_max}</h6>
+            <h6>Humidity: {forecast.main.humidity}</h6>
+            <h6>Wind Speed: {forecast.wind.speed}</h6>
             
-        
         </>
     )
 }

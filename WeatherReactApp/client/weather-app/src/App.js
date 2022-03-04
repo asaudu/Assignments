@@ -1,6 +1,6 @@
 import DayForecast from './components/DayForecast';
 import React , { useEffect, useState } from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 
 function App() {
@@ -21,8 +21,9 @@ console.log(data)
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        
+        {/* <img src={logo} className="App-logo" alt="logo" /> */}
+       <h1>Weather with Adaora</h1> 
+       <img src="file:///Users/tpl_1121_1/Downloads/icons8-barometer.gif"/>
         <p>{!data ? "Loading..." : ''}</p>
         {data && data.list.map((dayForecast) => {
          return <DayForecast forecast={dayForecast}/> 
