@@ -14,20 +14,29 @@
 } */
 
 .App-header {
+  background-image: url("https://images.unsplash.com/photo-1595818919383-5f2ad76ae372?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHN0YXJyeSUyMG5pZ2h0fGVufDB8fDB8fA%3D%3D&w=1000&q=80");
+  background-size: cover;
   background-color: #131A28;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   text-align: center;
   justify-content: center;
-  /* font-size: calc(10px + 2vmin); */
-  color: white;
+  /* color: white; */
+  color:#1CDBF5;
 }
 
 .heading-text {
-  color: white;
+  color: #1CDBF5;
   font-size: 42px;
   font-weight: bolder;
+  text-align: center;
+  margin: 20px;
+}
+
+.description-text {
+  color: white;
+  font-size: 20px;
   text-align: center;
   margin: 20px;
 }

@@ -47,6 +47,7 @@ function App() {
   return (
     <div className="App"  className="App-header">
       <p className ="heading-text">Tic-tac-toe baybeee</p>
+      <p className = "description-text">This is a simple game of tic-tac-toe against yourself. O goes first, have fun and feel free to reset the game when needed!</p>
       <div className="row jc-center">
         <Square className="b-bottom-right" state={gameState[0]} onClick={() => onSquareClicked(0)}/>
         <Square className="b-bottom-right" state={gameState[1]} onClick={() => onSquareClicked(1)}/>
