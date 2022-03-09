@@ -4,6 +4,7 @@ import './App.css';
 import Quiz from './Component/Quiz';
 
 function App() {
+  //keep useState undefined so as not to interupt processes moving forward
   const [data, setData] = useState();
   //line below was implemented when I got help from a fellow participant since I mentioned my quiz renders new questions each time. Not sure this is needed though
   //const [currentUrl, setCurrentUrl] = useState('/api')
@@ -20,6 +21,7 @@ function App() {
        return setData(resJson)
       });
   }, []);
+  //checking that the data is actually being received.
 console.log("the data ", data)
   return (
     <div className="App">
@@ -27,6 +29,7 @@ console.log("the data ", data)
 
       {/* <button onClick={connectToBackend}>Send Request to Backend</button> */}
       {/* Render the newly fetched data inside data */}
+      {/* will show Loading if there are any issues retrieving the data */}
       <p>{!data ? "Loading Love..." : ''}</p>
       {data && data.results.map((animeQuiz) => {
         return <Quiz lequiz={animeQuiz}/>
