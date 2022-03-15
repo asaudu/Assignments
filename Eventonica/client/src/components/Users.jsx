@@ -7,6 +7,19 @@ const Users = () => {
     const dory = { name: 'Dory', email: 'dory@gmail.com', id: '3' };
 
     const [users, setUsers] = useState([marlin, nemo, dory]);
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState();
+    const [id, setId] = useState();
+
+    const handleUserSubmit = (e) => {
+        e.preventDefault();
+        const newUser = {id, name, email};
+        setUsers([...users, newUser]);
+    };
+
+    // console.log(name)
+    // console.log(email)
+    // console.log(id)
 
     return(
         <section className="user-management">
@@ -24,10 +37,16 @@ const Users = () => {
               <form id="add-user" action="#">
                 <fieldset>
                   <label>Name</label>
-                  <input type="text" id="add-user-name" />
+                  <input type="text" id="add-user-name" value={name} onChange={(e) => setName(e.target.value)}/>
+                  <br/> <br/>
+                  <label>Email</label>
+                  <input type="text" id="add-email" value={email} onChange={(e) => setEmail(e.target.value)}/>
+                  <br/> <br/>
+                  <label>ID</label>
+                  <input type="text" id="add-id" value={id} onChange={(e) => setId(e.target.value)}/>
                 </fieldset>
                 {/* Add more form fields here */}
-                <input type="submit" value="Add" />
+                <input type="submit" value="Add" onSubmit={handleUserSubmit}/>
               </form>
             </div>
 

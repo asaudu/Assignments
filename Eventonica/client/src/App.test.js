@@ -1,5 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
+import Footer from './components/Footer';
+import Users from './components/Users';
 
 // test('renders App page', () => {
 //   render(<App />);
@@ -10,5 +12,17 @@ import App from './App';
 describe("App", () => {
   test("renders App component", () => {
     render(<App />)
+  });
+});
+
+describe("Users", () => {
+  test("renders Users component", () => {
+    render(<Users />)
+  });
+});
+
+describe("Footer", () => {
+  test("renders Footer component", () => {
+    render(<Footer />)
   });
 });
