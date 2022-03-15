@@ -1,9 +1,18 @@
 import calendar from "./calendar.png";
+import { useState } from "react";
 import "./App.css";
 import Footer from "./components/Footer";
 import Users from "./components/Users";
 
 function App() {
+//the below was an attempt to get the new user to be added to the list, failed  
+const [submitted, setSubmitted] = useState(false);
+
+const onSubmit = () => {
+  setSubmitted(true);
+  console.log("User Successfully Added!");
+};
+
   return (
     <div className="App">
       <header>
@@ -13,7 +22,7 @@ function App() {
 
       <main>
         <div className="user-and-events">
-          <Users />
+          <Users onSubmit={onSubmit}/>
 
           <section className="event-management">
             <h2>Event Management</h2>
