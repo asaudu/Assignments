@@ -1,8 +1,8 @@
 import {useState} from 'react';
 
-const DeleteUser = (props) => {
+const DeleteUser = ({deleteUser}) => {
 //haven't checked to see if this works yet
-const [deleteId, setDeleteId] = useState("");
+const [deleteId, setDeleteId] = useState('');
 
     
     return(
@@ -10,16 +10,16 @@ const [deleteId, setDeleteId] = useState("");
               <h3>Delete User</h3>
               <form id="delete-user" action="#" onSubmit={(e) => {
                   e.preventDefault();
-                  props.deleteUser(deleteId);
-                  setDeleteId("")
+                  deleteUser(deleteId);
+                  setDeleteId('')
               }}>
                 <fieldset>
                   <label>User ID</label>
-                  <input type="text" id="delete-user-id" />
-                </fieldset>
-                <input type="submit" onChange={(e) => {
+                  <input type="text" id="delete-user-id" onChange={(e) => {
                     setDeleteId(e.target.value)
                 }}/>
+                </fieldset>
+                <input type="submit"/>
               </form>
         </div>
     )

@@ -24,8 +24,8 @@ const Users = (props) => {
         setUsers([...users, newUser]);
     };
 
-    const deleteUser = (e, deleteId) => {
-        e.preventDefault();
+    const deleteUser = (deleteId) => {
+        //e.preventDefault();
         const newUsers = users.filter((i) => i.id !== deleteId);
         setUsers(newUsers);
       };
@@ -63,7 +63,7 @@ const Users = (props) => {
                 <input type="submit" value="Add" />
               </form>
             </div>  
-            <DeleteUser onSubmit={deleteUser}/> 
+            <DeleteUser deleteUser={deleteUser}/> 
         </section>
     )
 };
