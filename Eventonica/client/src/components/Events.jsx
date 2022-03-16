@@ -57,6 +57,12 @@ const Events = () => {
 
           }
       };
+
+      const handleEventSubmit = (e) => {
+          e.preventDefault();
+          setEvents([...events, state]);
+      }
+
       
         
 
@@ -74,9 +80,22 @@ const Events = () => {
               </ul>
 
               <h3>Add Event</h3>
-              <form id="add-event" action="#">
+              <form id="add-event" action="#" onSubmit={handleEventSubmit}>
                 <fieldset>
-                  <label>Name</label>
+                <label>Id</label>
+                  <input
+                    type="text"
+                    placeholder="Choose an ID" value={state.id}
+                    onChange={(e) =>
+                      dispatch({
+                        type: 'editId',
+                        payload: e.target.value
+                      })
+                    }
+                  />
+                  <br/> <br/>
+                  
+                <label>Name</label>
                   <input
                     type="text"
                     //id="add-event-name"
@@ -89,19 +108,20 @@ const Events = () => {
                     }
                   />
                   <br/> <br/>
-                  <label>Id</label>
+                <label>Date</label>
                   <input
-                    type="text"
-                    placeholder="Choose an ID" value={state.id}
+                    type="date"
+                    //id="add-event-name"
+                    placeholder="Virtual corgi meetup" value={state.date}
                     onChange={(e) =>
                       dispatch({
-                        type: 'editId',
+                        type: 'editDate',
                         payload: e.target.value
                       })
                     }
                   />
-                  <br/> <br/>
-                  <label>Description</label>
+                    <br/> <br/> 
+                <label>Description</label>
                   <input
                     type="text"
                     id="add-event-name"
@@ -114,7 +134,7 @@ const Events = () => {
                     }
                   />
                   <br/> <br/>
-                  <label>Category</label>
+                <label>Category</label>
                   <input
                     type="text"
                     //id="add-event-category"
@@ -122,19 +142,6 @@ const Events = () => {
                     onChange={(e) =>
                       dispatch({
                         type: 'editCategory',
-                        payload: e.target.value
-                      })
-                    }
-                  />
-                  <br/> <br/> 
-                  <label>Date</label>
-                  <input
-                    type="date"
-                    //id="add-event-name"
-                    placeholder="Virtual corgi meetup" value={state.date}
-                    onChange={(e) =>
-                      dispatch({
-                        type: 'editDate',
                         payload: e.target.value
                       })
                     }
