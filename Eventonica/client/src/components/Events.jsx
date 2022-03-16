@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useReducer } from "react";
 
 const Events = () => {
     const aBirthday = {
@@ -27,6 +27,39 @@ const Events = () => {
 
       const [events, setEvents] = useState([aBirthday, graduation,worldDom]);
 
+      //const [events, setEvents] = useState([]);
+
+      
+
+      const initialState = {
+        id: '',
+        name: '',
+        date: '',
+        description: '',
+        category: ''
+      };
+
+      const [state, dispatch] = useReducer(reducer, initialState);
+
+      function reducer(state, action) {
+          console.log(state, action);
+          switch(action.type) {
+              case "editId":
+                return { ...state, id: action.payload };
+              case "editName":
+                return { ...state, name: action.payload };
+              case "editDate":
+                return { ...state, date: action.payload }; 
+              case "editDescription":
+                return { ...state, description: action.payload };
+              case "editCategory":
+                return { ...state, category: action.payload };
+
+          }
+      };
+      
+        
+
     return(
         <section className="event-management">
             <h2>Event Management</h2>
@@ -46,8 +79,65 @@ const Events = () => {
                   <label>Name</label>
                   <input
                     type="text"
+                    //id="add-event-name"
+                    placeholder="Virtual corgi meetup" value={state.name}
+                    onChange={(e) =>
+                      dispatch({
+                        type: 'editName',
+                        payload: e.target.value
+                      })
+                    }
+                  />
+                  <br/> <br/>
+                  <label>Id</label>
+                  <input
+                    type="text"
+                    placeholder="Choose an ID" value={state.id}
+                    onChange={(e) =>
+                      dispatch({
+                        type: 'editId',
+                        payload: e.target.value
+                      })
+                    }
+                  />
+                  <br/> <br/>
+                  <label>Description</label>
+                  <input
+                    type="text"
                     id="add-event-name"
-                    placeholder="Virtual corgi meetup"
+                    placeholder="Virtual corgi meetup" value={state.description}
+                    onChange={(e) =>
+                      dispatch({
+                        type: 'editDescription',
+                        payload: e.target.value
+                      })
+                    }
+                  />
+                  <br/> <br/>
+                  <label>Category</label>
+                  <input
+                    type="text"
+                    //id="add-event-category"
+                    placeholder="Virtual corgi meetup" value={state.category}
+                    onChange={(e) =>
+                      dispatch({
+                        type: 'editCategory',
+                        payload: e.target.value
+                      })
+                    }
+                  />
+                  <br/> <br/> 
+                  <label>Date</label>
+                  <input
+                    type="date"
+                    //id="add-event-name"
+                    placeholder="Virtual corgi meetup" value={state.date}
+                    onChange={(e) =>
+                      dispatch({
+                        type: 'editDate',
+                        payload: e.target.value
+                      })
+                    }
                   />
                 </fieldset>
                 {/* Add more form fields here */}
