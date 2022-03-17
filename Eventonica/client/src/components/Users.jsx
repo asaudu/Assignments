@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { router } from '../../../server/app';
 import DeleteUser from './DeleteUser';
 
 const Users = () => {
@@ -11,11 +12,18 @@ const Users = () => {
     const [users, setUsers] = useState([]);
     console.log('users', users);
 
+    //this function is getting the api and linking it to this react component
     const getUsers = () => {
     fetch('http://localhost:4000/users')
         .then((res) => res.json())
         .then((res) => setUsers(res.users));
     };
+
+    // const addUsers = () => {
+    //     router.post('/', function (req, res, next) {
+    //         res.send('User successfully added!');
+    //     })
+    // }
 
     useEffect(() => {
     // useEffect will run getUsers() every time this component loads, as opposed to just the first time it is rendered.
