@@ -27,8 +27,6 @@ const Events = () => {
 
       const [events, setEvents] = useState([aBirthday, graduation,worldDom]);
 
-      //const [events, setEvents] = useState([]);
-
       
 
       const initialState = {

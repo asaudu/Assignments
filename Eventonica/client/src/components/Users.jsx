@@ -1,13 +1,26 @@
-import {useState} from 'react';
+import { useState, useEffect } from 'react';
 import DeleteUser from './DeleteUser';
 
-const Users = (props) => {
+const Users = () => {
 
     const marlin = { name: 'Marlin', email: 'marlin@gmail.com', id: '1' };
     const nemo = { name: 'Nemo', email: 'nemo@gmail.com', id: '2' };
     const dory = { name: 'Dory', email: 'dory@gmail.com', id: '3' };
 
-    const [users, setUsers] = useState([marlin, nemo, dory]);
+    //const [users, setUsers] = useState([marlin, nemo, dory]);
+    const [users, setUsers] = useState([]);
+    console.log('users', users);
+
+    const getUsers = () => {
+    fetch('http://localhost:4000/users')
+        .then((res) => res.json())
+        .then((res) => setUsers(res.users));
+    };
+
+    useEffect(() => {
+    // useEffect will run getUsers() every time this component loads, as opposed to just the first time it is rendered.
+    getUsers();
+    }, []);
 
     const [name, setName] = useState('');
     const [email, setEmail] = useState();
