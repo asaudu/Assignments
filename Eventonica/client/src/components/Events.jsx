@@ -1,4 +1,5 @@
 import { useState, useReducer } from "react";
+import DeleteEvent from "./DeleteEvent";
 
 const Events = () => {
     const aBirthday = {
@@ -61,6 +62,11 @@ const Events = () => {
           setEvents([...events, state]);
       }
 
+      const deleteEventId = (deleteId) => {
+        //e.preventDefault();
+        const newEvent = events.filter((i) => i.id !== deleteId);
+        setEvents(newEvent);
+      };
       
         
 
@@ -149,7 +155,9 @@ const Events = () => {
                 <input type="submit" />
               </form>
             </div>
+            <DeleteEvent deleteEventId={deleteEventId}/>
           </section>
+          
     )
 }
 

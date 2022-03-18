@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 //import { router } from '../../../server/app';
 import DeleteUser from './DeleteUser';
 
-const Users = () => {
+const Users = (props) => {
 
     // const marlin = { name: 'Marlin', email: 'marlin@gmail.com', id: '1' };
     // const nemo = { name: 'Nemo', email: 'nemo@gmail.com', id: '2' };
@@ -18,6 +18,12 @@ const Users = () => {
         .then((res) => res.json())
         .then((res) => setUsers(res.users));
     };
+
+    // const getUsers = async () => {
+    //     const response = await fetch('http://localhost:4000/users');
+    //     const user = await response.json();
+    //     setUsers(user);
+    //   };
 
 
     useEffect(() => {
@@ -40,11 +46,41 @@ const Users = () => {
         setUsers([...users, newUser]);
     };
 
+    //new user with the updated handler
+    // const handleUserSubmit = async (e) => {
+    //     e.preventDefault();
+    //     const newUser = { id: id, name: name, email: email };
+      
+    //     const rawResponse = await fetch('http://localhost:4000/users', {
+    //       method: 'POST',
+    //       headers: {
+    //         Accept: 'application/json',
+    //         'Content-Type': 'application/json'
+    //       },
+    //       body: JSON.stringify(newUser)
+    //     });
+    //     const content = await rawResponse.json();
+      
+    //     setUsers([...users, content]);
+    //   };
+
+
     const deleteUser = (deleteId) => {
         //e.preventDefault();
         const newUsers = users.filter((i) => i.id !== deleteId);
         setUsers(newUsers);
       };
+
+    //   useEffect(() => {
+    //     // DELETE request using fetch with async/await
+    //      const deletePost = async () => {
+    //         const res = await fetch('http://localhost:4000/users', {
+    //         method: 'DELETE' });
+    //         setUsers('Delete successful');
+    //     }
+    
+    //     deletePost();
+    // }, []);
 
     // console.log(name);
     // console.log(email);
