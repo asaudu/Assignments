@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
-import { router } from '../../../server/app';
+//import { router } from '../../../server/app';
 import DeleteUser from './DeleteUser';
 
 const Users = () => {
 
-    const marlin = { name: 'Marlin', email: 'marlin@gmail.com', id: '1' };
-    const nemo = { name: 'Nemo', email: 'nemo@gmail.com', id: '2' };
-    const dory = { name: 'Dory', email: 'dory@gmail.com', id: '3' };
+    // const marlin = { name: 'Marlin', email: 'marlin@gmail.com', id: '1' };
+    // const nemo = { name: 'Nemo', email: 'nemo@gmail.com', id: '2' };
+    // const dory = { name: 'Dory', email: 'dory@gmail.com', id: '3' };
 
     //const [users, setUsers] = useState([marlin, nemo, dory]);
     const [users, setUsers] = useState([]);
@@ -19,11 +19,6 @@ const Users = () => {
         .then((res) => setUsers(res.users));
     };
 
-    // const addUsers = () => {
-    //     router.post('/', function (req, res, next) {
-    //         res.send('User successfully added!');
-    //     })
-    // }
 
     useEffect(() => {
     // useEffect will run getUsers() every time this component loads, as opposed to just the first time it is rendered.
